@@ -1,55 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <title>Ejemplos de posición</title>
+  <head>
+    <title>Ejemplo de posición</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        main {
-            border: 2px solid black;
-            overflow: auto;
-        }
+      /*Conseguimos que el bodiy, más estrecho que la página se muestre en el centro.*/
+      body {
+        width: 80%;
+        margin: 0 auto;
+      }
+      /*
+              Este main tiene la propiedad overflow: auto, lo que hace que se cree un scroll,
+              y así se pueda ver el contenido que se sale de los límites del main,
+              como es el caso del elemento section o aside, que al ser flotantes, no se calcula bien
+              su altura y se salen del main.
 
-        section {
-            width: 60%;
-            border: 2px solid red;
-            height: 200px;
-            float: left;
-        }
+              Prueba a quitar la propiedad overflow: auto y verá que el aside y la sección se salen del main.
+              */
 
-        aside {
-            width: 30%;
-            border: 2px solid red;
-            height: 200px;
-            float: right;
-        }
+      main {
+        overflow: auto;
+        padding: 0.5em;
+        border: 2px solid black;
+      }
 
-        footer {
-            clear: both;
-        }
+      /* Los elementos flotantes dejan el hueco que ocupan y se alinean hacia la izquierda
+             o la derecha. Si les ponemos menos anchura que la del padre, varios elementos flotantes
+             hermanos podrán ocupar el mismo espacio en horizontal, cosa que también se podría
+             conseguir con contenedor flex.*/
+      section {
+        width: 60%;
+        border: 2px solid red;
+        height: 200px;
+        float: left;
+      }
 
-        body {
-            width: 80%;
-            margin: 0 auto;
-
-        }
+      aside {
+        width: 30%;
+        border: 2px solid red;
+        height: 200px;
+        float: right;
+      }
+      /* Con esta propiedad también se consigue que se visualicen bien los elementos flotantes
+      dentro de su contenedor.
+      Descomente esta propiedad y verá como el footer no se coloca adecuadamente.*/
+      /*
+            footer {
+              clear: both;
+            }
+      */
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Seminario CSS</h1>
+      <h1>Seminario CSS</h1>
     </header>
     <main>
-        <header>
-            <h2>Ejemplos de posición</h2>
-        </header>
-        <section>Esta es la sección</section>
-        <aside>Este es el aside</aside>
+      <header>
+        <h2>Ejemplos de posición</h2>
+      </header>
+      <section>Esta es la sección</section>
+      <aside>Este es el aside</aside>
 
-        <footer>Hola soy un footer</footer>
+      <footer>Hola soy un footer</footer>
     </main>
-</body>
-
+  </body>
 </html>
