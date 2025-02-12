@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Enviar datos a un formulario</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      div {
+        margin: 10px;
+        padding: 10px;
+        border: 1px solid black;
+        overflow: auto;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Enviar datos a un formulario con FormData</h1>
+    </header>
+    <main>
+      <button onclick="enviar()">Enviar</button>
+      <div id="result"></div>
+    </main>
+  </body>
+  <script>
+    function enviar() {
+      var formData = new FormData();
+
+      formData.append("username", "jccuevas");
+      formData.append("accountnum", 123456);
+      formData.append("departament", "Telecommunication Engineering");
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "http://labtelema.ujaen.es/form.php");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          console.log(xhr.responseText);
+          document.getElementById("result").innerHTML = xhr.responseText;
+        }
+      };
+      xhr.send(formData);
+    }
+  </script>
+</html>

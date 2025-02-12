@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Página Web Básica</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header,
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+      }
+      main {
+        padding: 20px;
+      }
+      input {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Ejemplo de cadenas</h1>
+    </header>
+    <main id="main">
+      <h2>Página inicial</h2>
+      <p>Esta es una página web básica creada como ejemplo.</p>
+      <label for="texto">Números</label
+      ><textarea name="texto" id="texto" cols="30" rows="10">
+Escribe números separados por comas</textarea
+      >
+
+      <button type="button" onclick="preparaSuma()">Sumar</button>
+      <h4>Resultado</h4>
+      <p id="result"></p>
+    </main>
+    <footer>
+      <p>&copy; 2024 Mi Página Web</p>
+    </footer>
+    <script>
+      function preparaSuma() {
+        let str = document.getElementById("texto").value;
+        let arr = str.split(",");
+        console.log(arr);
+        console.log(...arr);
+        document.getElementById("result").innerHTML = suma(...arr);
+      }
+      function suma() {
+        let arg = Array.from(arguments);
+        return arg.reduce((acc, el) => {
+          return isNaN(el) ? acc : acc + parseInt(el);
+        }, 0);
+      }
+    </script>
+  </body>
+</html>

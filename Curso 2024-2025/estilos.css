@@ -1,0 +1,13 @@
+main > div {
+  border: 2px solid black;
+}
+ul > li {
+  border-top: 5px solid red;
+}
+span {
+  background-color: aqua;
+}
+
+div > span {
+  background-color: yellow;
+}

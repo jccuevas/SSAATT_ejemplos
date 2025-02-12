@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Ejemplos de eventos</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #primero {
+        background-color: lightblue;
+        padding: 10px;
+      }
+      #segundo {
+        background-color: lightgreen;
+        padding: 10px;
+      }
+      #tercero {
+        background-color: lightcoral;
+        padding: 10px;
+      }
+      #botón {
+        background-color: lightgoldenrodyellow;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ejemplo de fases del evento</h1>
+    <p>Abra la consola JavaScript del navegador</p>
+    <div id="primero">
+      <h2>Div primero</h2>
+      <p>Capturo los eventos onclick</p>
+      <div id="segundo" onclick="evento(event)">
+        <h2>Div segundo</h2>
+        <p>No capturo los eventos onclick</p>
+        <div id="tercero" onclick="evento(event)">
+          <h2>Div tercero</h2>
+          <p>Capturo los eventos onclick con otra función diferente</p>
+          <button id="botón" type="button" onclick="evento(event)">
+            Pulsa
+          </button>
+          <label for="texto">Introduce texto:</label>
+          <input
+            type="text"
+            id="texto"
+            placeholder="Escribe aquí"
+            title="Campo de texto" />
+          <p id="resultado">Aquí sale la tecla pulsada...</p>
+        </div>
+      </div>
+    </div>
+    <button id="botón2" type="button" onclick="borrarEvento(event)">
+      Borrar evento Div tercero
+    </button>
+    <script>
+      document
+        .getElementById("primero")
+        .addEventListener("click", evento, true); //Se captura el evento
+      //Registramos un nuevo evento para el tecer div
+      document
+        .getElementById("tercero")
+        .addEventListener("click", evento2, true); //Se captura el evento
+      function evento(e) {
+        console.log("Evento id=" + e.currentTarget.id);
+        console.log("Evento Target actual=" + e.currentTarget);
+        console.log("Evento Fase de evento=" + e.eventPhase);
+      }
+
+      function evento2(e) {
+        console.log("Evento2 id=" + e.currentTarget.id);
+        console.log("Evento2 Target actual=" + e.currentTarget);
+        console.log("Evento2 Fase de evento=" + e.eventPhase);
+      }
+
+      function borrarEvento(e) {
+        document
+          .getElementById("tercero")
+          .removeEventListener("click", evento2, true);
+      }
+
+      document.getElementById("texto").addEventListener("keyup", eventoTecla);
+
+      function eventoTecla(e) {
+        document.getElementById("resultado").innerHTML =
+          "Tecla pulsada: " + e.key;
+      }
+    </script>
+  </body>
+</html>

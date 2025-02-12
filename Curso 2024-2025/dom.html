@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Página Web Básica</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header,
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+      }
+      main {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Bienvenido a Mi Página Web</h1>
+    </header>
+    <main id="main">
+      <h2>Página inicial</h2>
+      <p>Esta es una página web básica creada como ejemplo.</p>
+    </main>
+    <footer>
+      <p>&copy; 2024 Mi Página Web</p>
+    </footer>
+    <script>
+      let newDom = new Document();
+      let newBody = newDom.createElement("body");
+      let newMain = newDom.createElement("main");
+      newDom.appendChild(newBody);
+      newBody.appendChild(newMain);
+      newMain.innerHTML = "<h2>DOM creado dinamicamente.</h2>";
+      let main = document.getElementById("main");
+      main.innerHTML = newDom.innerHTML;
+    </script>
+  </body>
+</html>
