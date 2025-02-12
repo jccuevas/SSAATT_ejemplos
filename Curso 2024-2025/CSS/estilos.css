@@ -1,13 +1,28 @@
+/* Estilo para todos los div*/
+div {
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+}
+/*Estilo solo para los hijos directos del div*/
 main > div {
   border: 2px solid black;
 }
-ul > li {
-  border-top: 5px solid red;
+
+div.noHijo {
+  background-color: green;
 }
+
 span {
   background-color: aqua;
 }
-
-div > span {
+/*Todos los span dentro de un div*/
+div span {
   background-color: yellow;
+}
+/*Todos los span hijos directos del div*/
+div > span {
+  background-color: orange;
+}
+span + span {
+  background-color: pink;
 }

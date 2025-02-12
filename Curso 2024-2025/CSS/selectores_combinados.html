@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplo de Página Web</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Bienvenido a mi Página Web</h1>
+    </header>
+    <main>
+      <p>
+        Este ejemplo muestra la aplicación de estilos con una hoja de estilos
+        externa.
+      </p>
+      <p>Los ejemplos incluyen ejemplos de selectores combinados.</p>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>
+        Hola, soy un div. Recibo el estilo porque soy un hijo directo de main.
+        <div class="noHijo">
+          Div dentro de un párrafo. No recibo el estilo del borde porque no soy
+          un hijo directo del div.
+        </div>
+      </div>
+    </main>
+    <div>
+      <span> Span en el div. </span>
+      <span> Span hermano del otro span. </span>
+      <p>
+        <span>
+          Span que no es hermano ni hijo directo del div, pero sí hijo.
+        </span>
+      </p>
+    </div>
+    <span>Span #3, not in the div at all.</span>
+    <footer>
+      <p>&copy; 2024 Ejhemplos CSS</p>
+    </footer>
+  </body>
+</html>
