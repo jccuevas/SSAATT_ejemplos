@@ -7,3 +7,5 @@ En este repositorio estarán disponibles los ejemplos de clase de la asignatura 
 - Sobre todo serán ejemplos de HTML, CSS y JavaScript, pudiendo tener también ejemplos para Node.js, MongoDB o React.js.
 
 - Puede que los ejemplos no estén completos, fruto de la propia dinámica de la clase, por lo que deben ser analizados con cuidado y cotejados con la información disponible en el material de la asignatura, así como en páginas web de recerencia.
+## Servidor labtelema
+Recuerde que también puede encontrar más ejemplos en el servidor de práctias [https://labtelema.ujaen.es](https://labtelema.ujaen.es/ssaatt.html)
