@@ -1,53 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <title>Ejemplos de posición</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        main {
-            display: flex;
-        }
+      main {
+        display: flex;
+      }
 
-        div {
-            border: 2px solid black;
-            width: 100px;
-            height: 100px;
-        }
+      div {
+        border: 2px solid black;
+        width: 100px;
+        height: 100px;
+      }
 
-        #uno {
-            flex: 3;
-            flex-shrink: 0;
-        }
+      #uno {
+        flex: 3;
+        flex-shrink: 0;
+      }
 
-        #dos,
-        #tres {
-            flex: 1;
-        }
+      #dos,
+      #tres {
+        flex: 1;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Seminario CSS</h1>
+      <h1>Seminario CSS</h1>
     </header>
+    <p>
+      Este ejmplo crea un contenedor flexible y permite ajustar tres div
+      internamente.
+    </p>
     <main>
-
-
-        <div id="uno">
-            <p>1</p>
-        </div>
-        <div id="dos">
-            <p>2</p>
-        </div>
-        <div id="tres">
-            <p>3</p>
-        </div>
-
-
-
+      <div id="uno">
+        <p>1</p>
+      </div>
+      <div id="dos">
+        <p>2</p>
+      </div>
+      <div id="tres">
+        <p>3</p>
+      </div>
     </main>
-</body>
-
+  </body>
 </html>

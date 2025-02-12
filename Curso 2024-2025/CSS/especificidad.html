@@ -1,33 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <title>Ejemplos de posición</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        body {
-            color: green;
-        }
+      /*La propiedad color se hereda 
+        por lo tanto el div tendrá el texto también en rojo*/
+      body {
+        color: green;
+        border: 2px solid black;
+        padding: 0.5em;
+      }
+      div {
+        background-color: lightgray;
+        padding: 0.5em;
+      }
+      /* Si se quiere que el texto del div sea de otro color 
+   se debe aplicar un selector más específico que modifique la
+   propiedad heredada.
+   Por ejemplo border no se hereda: aunque body tenga borde, el div no lo toma,
+    pero sí el color del texto (tamibén lo puedes ver en el h1).*/
+      /* DESCOMENTA
+      div {
+        color: orange;
+      }
+*/
+      /*Especificidad
+Ahora el div va a tener dos selectores que le aplican color, uno por id y 
+otro por clase. El selector más específico es el que se aplica, que 
+en este caso es el de ID (especificidad 100), aunque el de clase se ponga
+más abajo, ya que un selector por clase tiene solo especificidad 10.
+Deja el cursor sobre cada estilo y verás que Visual Studio Code te muestra
+la especificidad*/
+      /* DESCOMENTA para ver un ejemplo de especificidad
 
-        div {
-            color: orange;
-        }
+#uno {color: red;}
+
+.clase {color: blue;}
+*/
+
+      /* Aún podemos hacer una regla más específica, agrupando selectores.
+Ahora la especificidad es 110, por lo que se aplica el color morado*/
+      /* DESCOMENTA para ver un ejemplo de especificidad con agrupación
+#uno.clase {color: purple;}
+*/
+
+      /* Si se quiere forzar a que se aplique el color azul, se puede hacer con !important.
+      Con !important forzamos la especificidad */
+      /* DESCOMENTA para ver un ejemplo de !important
+      div {
+        color: blue !important;
+      }
+        */
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1>Seminario CSS</h1>
+      <h1>Seminario CSS</h1>
     </header>
     <main>
-        <header>
-            <h2>Especificidad</h2>
-        </header>
-        <div id="uno" class="clase">Soy un div que soy elegido por más de un selector.</div>
-
-
+      <header>
+        <h2>Especificidad</h2>
+      </header>
+      <p>
+        Recuerde que la especificidad se debe aplicar cuando varios selectores
+        se aplican al mismo elemento.
+      </p>
+      <p>
+        Revisa el código de la página para ir probando ejemplos de aplicación de
+        estilos y especificidad.
+      </p>
+      <div id="uno" class="clase">
+        Soy un div que soy elegido por más de un selector.
+      </div>
     </main>
-</body>
-
+  </body>
 </html>
