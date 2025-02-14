@@ -30,8 +30,12 @@
       display: none;
     }
 
-    .active1 {
-      background-color: green;
+    nav a {
+      text-decoration: none;
+    }
+
+    a.activeMenu {
+      outline: 2px dashed red;
     }
   </style>
 </head>
@@ -42,9 +46,10 @@
     <h1>Bienvenido a Mi Página Web</h1>
   </header>
   <nav>
-    <a href="#" onclick="getSection(event, 1)">Inicio</a>
-    <a href="#" onclick="getSection(2)">Segunda</a>
-    <a href="#" onclick="getSection(3)">Tercera</a>
+    <!-- Al enlace que estaría activo al inicio se le añade la clase activeMenu-->
+    <a href="#" onclick="getSection(event, 1)" class="activeMenu">Inicio</a>
+    <a href="#" onclick="getSection(event, 2)">Segunda</a>
+    <a href="#" onclick="getSection(event, 3)">Tercera</a>
   </nav>
   <main id="main">
     <section id="section-1">
