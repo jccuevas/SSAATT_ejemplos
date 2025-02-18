@@ -37,11 +37,15 @@
     a.activeMenu {
       outline: 2px dashed red;
     }
+
+    #texto li {
+      list-style: none;
+      border-left: 2px solid red;
+    }
   </style>
 </head>
 
 <body>
-  <script src="script_dom.js"></script>
   <header>
     <h1>Bienvenido a Mi Página Web</h1>
   </header>
@@ -55,6 +59,8 @@
     <section id="section-1">
       <h2>Página inicial</h2>
       <p>Esta es una página web básica creada como ejemplo.</p>
+      <ul id="texto"></ul>
+      <button id="botonCrear">Crear párrafo</button>
     </section>
     <section id="section-2" class="hidden">
       <h2>Página segunda</h2>
@@ -68,7 +74,8 @@
   <footer>
     <p>&copy; 2024 Mi Página Web</p>
   </footer>
-
+  <script src="script_dom.js"></script>
+  <script src="crear.js"></script>
 </body>
 
 </html>
