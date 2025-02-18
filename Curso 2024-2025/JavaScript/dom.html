@@ -1,48 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mi Página Web Básica</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-      }
-      header,
-      footer {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 1em 0;
-      }
-      main {
-        padding: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Bienvenido a Mi Página Web</h1>
-    </header>
-    <main id="main">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Página Web Básica</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header,
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    nav a {
+      text-decoration: none;
+    }
+
+    a.activeMenu {
+      outline: 2px dashed red;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="script_dom.js"></script>
+  <header>
+    <h1>Bienvenido a Mi Página Web</h1>
+  </header>
+  <nav>
+    <!-- Al enlace que estaría activo al inicio se le añade la clase activeMenu-->
+    <a href="#" onclick="getSection(event, 1)" class="activeMenu">Inicio</a>
+    <a href="#" onclick="getSection(event, 2)">Segunda</a>
+    <a href="#" onclick="getSection(event, 3)">Tercera</a>
+  </nav>
+  <main id="main">
+    <section id="section-1">
       <h2>Página inicial</h2>
       <p>Esta es una página web básica creada como ejemplo.</p>
-    </main>
-    <footer>
-      <p>&copy; 2024 Mi Página Web</p>
-    </footer>
-    <script>
-      let newDom = new Document();
-      let newBody = newDom.createElement("body");
-      let newMain = newDom.createElement("main");
-      newDom.appendChild(newBody);
-      newBody.appendChild(newMain);
-      newMain.innerHTML = "<h2>DOM creado dinamicamente.</h2>";
-      let main = document.getElementById("main");
-      main.innerHTML = newDom.innerHTML;
-    </script>
-  </body>
+    </section>
+    <section id="section-2" class="hidden">
+      <h2>Página segunda</h2>
+      <p>Esta es una página web básica creada como ejemplo.</p>
+    </section>
+    <section id="section-3" class="hidden">
+      <h2>Página tercera</h2>
+      <p>Esta es una página web básica creada como ejemplo.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Mi Página Web</p>
+  </footer>
+
+</body>
+
 </html>
