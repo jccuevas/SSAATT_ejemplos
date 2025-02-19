@@ -1,81 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Página Web Básica</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Página Web Básica</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
+      header,
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 1em 0;
+      }
 
-    header,
-    footer {
-      background-color: #333;
-      color: white;
-      text-align: center;
-      padding: 1em 0;
-    }
+      main {
+        padding: 20px;
+      }
 
-    main {
-      padding: 20px;
-    }
+      .hidden {
+        display: none;
+      }
 
-    .hidden {
-      display: none;
-    }
+      nav a {
+        text-decoration: none;
+      }
 
-    nav a {
-      text-decoration: none;
-    }
+      a.activeMenu {
+        outline: 2px dashed red;
+      }
 
-    a.activeMenu {
-      outline: 2px dashed red;
-    }
+      #texto li {
+        list-style: none;
+        border-left: 2px solid red;
+      }
 
-    #texto li {
-      list-style: none;
-      border-left: 2px solid red;
-    }
-  </style>
-</head>
+      #error {
+        background-color: red;
+        color: white;
+        font-style: italic;
+      }
+    </style>
+  </head>
 
-<body>
-  <header>
-    <h1>Bienvenido a Mi Página Web</h1>
-  </header>
-  <nav>
-    <!-- Al enlace que estaría activo al inicio se le añade la clase activeMenu-->
-    <a href="#" onclick="getSection(event, 1)" class="activeMenu">Inicio</a>
-    <a href="#" onclick="getSection(event, 2)">Segunda</a>
-    <a href="#" onclick="getSection(event, 3)">Tercera</a>
-  </nav>
-  <main id="main">
-    <section id="section-1">
-      <h2>Página inicial</h2>
-      <p>Esta es una página web básica creada como ejemplo.</p>
-      <ul id="texto"></ul>
-      <button id="botonCrear">Crear párrafo</button>
-    </section>
-    <section id="section-2" class="hidden">
-      <h2>Página segunda</h2>
-      <p>Esta es una página web básica creada como ejemplo.</p>
-    </section>
-    <section id="section-3" class="hidden">
-      <h2>Página tercera</h2>
-      <p>Esta es una página web básica creada como ejemplo.</p>
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2024 Mi Página Web</p>
-  </footer>
-  <script src="script_dom.js"></script>
-  <script src="crear.js"></script>
-</body>
-
+  <body>
+    <header>
+      <h1>Bienvenido a Mi Página Web</h1>
+    </header>
+    <nav>
+      <!-- Al enlace que estaría activo al inicio se le añade la clase activeMenu-->
+      <a href="#" onclick="getSection(event, 1)" class="activeMenu">Inicio</a>
+      <a href="#" onclick="getSection(event, 2)">Segunda</a>
+      <a href="#" onclick="getSection(event, 3)">Tercera</a>
+    </nav>
+    <main id="main">
+      <div id="error"></div>
+      <section id="section-1">
+        <h2>Página inicial</h2>
+        <p>Esta es una página web básica creada como ejemplo.</p>
+        <ul id="texto"></ul>
+        <button id="botonCrear">Crear elementos</button>
+      </section>
+      <section id="section-2" class="hidden">
+        <h2>Página segunda</h2>
+        <p>Esta es una página web básica creada como ejemplo.</p>
+      </section>
+      <section id="section-3" class="hidden">
+        <h2>Página tercera</h2>
+        <p>Esta es una página web básica creada como ejemplo.</p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Mi Página Web</p>
+    </footer>
+    <script src="script_dom.js"></script>
+    <script src="crear.js"></script>
+  </body>
 </html>
