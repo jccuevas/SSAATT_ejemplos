@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>createTextNode example</title>
+    <style>
+      button {
+        margin: 5px;
+        display: block;
+      }
+    </style>
+    <script></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Formularios</h1>
+    </header>
+    <main>
+      <section id="formularios">
+        <form action="http://labtelema.ujaen.es/form.php" name="register">
+          <label>Usuario: <input type="text" name="user" /></label>
+          <label>Clave: <input type="password" name="password" /></label>
+          <input type="submit" value="Enviar" />
+        </form>
+        <button onclick="showUser()">Mostrar usuario</button>
+      </section>
+    </main>
+    <script>
+      function showUser() {
+        alert("Autenticando a: " + document.forms.register.user.value);
+      }
+    </script>
+  </body>
+</html>

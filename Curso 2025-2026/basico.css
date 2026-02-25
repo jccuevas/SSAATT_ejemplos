@@ -1,0 +1,25 @@
+h1 {
+  color: red;
+  font-size: large;
+  margin-bottom: 20px;
+  border: 2px solid black;
+  padding: 2px;
+}
+
+section {
+  background-color: beige;
+  height: 250px;
+  border: 2px solid black;
+}
+
+section.oculta {
+  display: none;
+}
+
+section.visible {
+  display: block;
+}
+
+button.activo {
+  outline: 2px red solid;
+}

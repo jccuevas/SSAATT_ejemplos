@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hojas de estlos</title>
+
+    <style>
+      html {
+        background-color: rgb(192, 20, 20);
+      }
+
+      body {
+        background-color: rgb(255, 255, 255);
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      body p {
+        color: blue;
+      }
+      p[title] {
+        color: chartreuse;
+      }
+      #main {
+        background-image: url(icono.png);
+        background-position:
+          right bottom,
+          left top;
+        background-repeat: no-repeat, repeat;
+      }
+    </style>
+    <link rel="stylesheet" href="basico.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Como &lt;style&gt; está después prevalece</h1>
+    </header>
+    <main id="main" class="container">
+      <h2>Fuera de section</h2>
+
+      <section>
+        <p title="hola">Soy un párrafo</p>
+      </section>
+    </main>
+  </body>
+</html>

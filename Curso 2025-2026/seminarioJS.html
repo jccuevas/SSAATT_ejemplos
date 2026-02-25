@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="basico.css">
+    <script src="clase-ssaatt.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Ejemplo</h1>
+    </header>
+    <main>
+        <section id="s-1" class="visible">
+            <h2>Sección 1</h2>
+            <p id="texto">Este es el texto a cambiar</p>
+            <div id="contenedor">
+
+            </div>
+        </section>
+        <section id="s-2" class="oculta">
+            <h2>Sección 2</h2>
+            <p id="texto2">Este es la sección 2</p>
+            < </section>
+    </main>
+    <button onclick="cambiarTexto('Hola<br>Adiós')">Pulsa</button>
+    <button onclick="crearParrafo('Nuevo párrafo')">Crear</button>
+    <button id="b-1" class="activo" onclick="cambiar(1)">Cambiar 1</button>
+    <button id="b-2" onclick="cambiar(2)">Cambiar 2</button>
+</body>
+
+</html>

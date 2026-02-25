@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>createTextNode example</title>
+    <style>
+      button {
+        margin: 5px;
+        display: block;
+      }
+    </style>
+    <script>
+      function addTextNode(text) {
+        var newtext = document.createTextNode(text),
+          p1 = document.getElementById("p1");
+
+        p1.appendChild(newtext);
+        p1.addEventListener("click", () => alert("Hola Mundo!")); // SÍ
+      }
+
+      function ejemplosConsola() {
+        const objeto = { name: "John", age: 30, city: "New York" };
+        const data = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+        let code = 123;
+        console.log("Mensaje normal");
+        console.dir(objeto);
+        console.error("Error", objeto);
+        console.error("Error %d: Value=%o", code, objeto);
+        console.debug("Depurando: %o", objeto);
+        console.table(data);
+      }
+    </script>
+  </head>
+
+  <body>
+    <button onclick="addTextNode('<p>YES! </p>')">YES!</button>
+    <button onclick="ejemplosConsola()">Imprime objeto</button>
+
+    <hr />
+
+    <p id="p1">First line of paragraph.</p>
+  </body>
+</html>
