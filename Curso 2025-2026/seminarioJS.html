@@ -13,6 +13,7 @@
     <header>
         <h1>Ejemplo</h1>
     </header>
+    <a onclick="stop(event)" href="https://www.google.com">Google</a>
     <nav>
         <button id="b-1" class="activo" onclick="cambiar('1')">Cambiar 1</button>
         <button id="b-2" onclick="cambiar('2')">Cambiar 2</button>
@@ -20,15 +21,22 @@
     <main>
         <section id="section-1" class="visible">
             <h2>Sección 1</h2>
-            <p id="texto">Este es el texto a cambiar</p>
-            <div id="contenedor">
 
+            <div onclick="propagacion(event)" id="contenedor">
+                <p onclick="propagacion(event)" id="texto">Este es el texto a cambiar</p>
+                <form name="auth" onsubmit="getName(event)">
+                    <label for="name">Nombre</label><input id="name" type="text" name="name">
+                    <label for="surname">Apellidos</label><input id="surname" type="text" name="surname">
+                    <input type="submit" value="Enviar">
+                </form>
             </div>
+
+
         </section>
         <section id="section-2" class="oculta">
             <h2>Sección 2</h2>
             <p id="texto2">Este es la sección 2</p>
-            < </section>
+        </section>
     </main>
     <button onclick="cambiarTexto('Hola<br>Adiós')">Pulsa</button>
     <button onclick="crearParrafo('Nuevo párrafo')">Crear</button>

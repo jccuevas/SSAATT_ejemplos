@@ -23,3 +23,9 @@ section.visible {
 button.activo {
   outline: 2px red solid;
 }
+
+div#contenedor {
+  height: 200px;
+  background-color: chartreuse;
+  overflow: auto;
+}
