@@ -18,23 +18,21 @@ function crearParrafo(texto) {
 }
 
 function cambiar(n) {
-    let s = document.getElementById("s-" + n);
+    let s = document.getElementById("section-" + n);
     let b = document.getElementById("b-" + n);
-    let sections = document.getElementsByTagName("section");
-    let botones = document.getElementsByTagName("button");
+    //let sections = document.getElementsByTagName("section");
+    //let botones = document.getElementsByTagName("button");
+    let botones = document.querySelectorAll("[id|=b]");
+    let sections = document.querySelectorAll("[id|=section]");
+    console.dir(botones);
 
     for (let element of sections) {
         element.classList.remove("visible");
         element.classList.add("oculta");
-
-
-
     };
+
     for (let element of botones) {
-
         element.classList.remove("activo");
-
-
     };
 
     s.classList.add("visible");
