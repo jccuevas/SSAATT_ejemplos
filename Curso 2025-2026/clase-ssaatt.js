@@ -1,6 +1,9 @@
 var num = 2;
 var parrafos = 0;
 
+var botonVacio = document.getElementById("vacio");
+botonVacio.addEventListener("click", () => alert("Soy el botón vacío"))
+
 function cambiarTexto(texto) {
     let p = document.getElementById("texto");
     p.innerHTML = texto;
