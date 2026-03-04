@@ -105,3 +105,26 @@ function cambiar(n) {
 
 }
 
+/**
+ * Esta función simula la descarga de una lista de usaurios de Internet
+ * @param {*} event Objeto Event
+ */
+function simularDescarga(event) {
+    const users = '[{"name":"Juan Carlos","apellido":"Cuevas"},{"name":"Antonio","apellido":"Yuste"},{"name":"Manuel Ángel","apellido":"Gadeo"}]';
+    let userList;//JSON con los usuarios
+    try {
+        userList = JSON.parse(users);
+        console.dir(userList);
+        let ul = document.getElementById("lista");
+        if (ul != null) {
+            for (let user of userList) {
+                let li = document.createElement("li");
+                li.innerHTML = "<b>" + user.name + "</b><br><i>" + user.surname + "</i>";
+                li.classList.add("user");
+                ul.appendChild(li);
+            }
+        }
+    } catch (ex) {
+        console.error("Excepción: " + ex.toString());
+    }
+}
