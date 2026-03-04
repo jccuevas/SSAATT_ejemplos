@@ -127,4 +127,27 @@ function simularDescarga(event) {
     } catch (ex) {
         console.error("Excepción: " + ex.toString());
     }
+
+}
+
+//Función que arranca el temporizador
+function lanzaTemporizador(event, timeout) {
+
+    if (confirm("¿Quieres lanzar el temporizador")) {
+        let t = prompt("¿Cuánto tiempo (ms)?", timeout);
+        setTimeout(() => {
+            resetButton(event.target)
+        }, t);
+    } else {
+        console.log("Temporizador no lanzado");
+    }
+
+}
+
+function resetButton(b) {
+    b.innerText = "EVENTO!!!!";
+    setTimeout(() => {
+        resetButton(b.innerText = "Temporizador")
+    }, 2000);
+
 }
