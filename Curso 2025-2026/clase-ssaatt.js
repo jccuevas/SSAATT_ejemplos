@@ -27,10 +27,33 @@ function getName(event) {
     //console.log("Leido: " + document.forms.auth.name.value + " " + document.forms.auth.surname.value);
     let formData = new FormData(document.forms.auth);
 
+    //Lectura de los campos del formulario a in JSON
+    let jsonObject = {};
+    //JSON desde FormData
     for (let key of formData.keys()) {
         console.log(key + " "
             + formData.get(key));
+        jsonObject[key] = formData.get(key);
     }
+
+    //JSON con una expresión
+    let json = {
+        "name": document.forms.auth.name.value,
+        "surname": document.forms.auth.surname.value
+    }
+
+    let jsonCadena = '{"user":"Juan Carlos","apellido":"Cuevas"}';
+    console.dir(jsonObject);
+    console.dir(json);
+    let jsonCad;
+    console.log(jsonCad);
+    try {
+        jsonCad = JSON.parse(jsonCadena);
+        console.dir(jsonCad);
+    } catch (ex) {
+        console.error("Excepción: " + ex.toString());
+    }
+
 
 
 }
@@ -81,3 +104,4 @@ function cambiar(n) {
 
 
 }
+
