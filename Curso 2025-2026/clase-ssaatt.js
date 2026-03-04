@@ -110,7 +110,7 @@ function cambiar(n) {
  * @param {*} event Objeto Event
  */
 function simularDescarga(event) {
-    const users = '[{"name":"Juan Carlos","apellido":"Cuevas"},{"name":"Antonio","apellido":"Yuste"},{"name":"Manuel Ángel","apellido":"Gadeo"}]';
+    const users = '[{"_id":"234123412c3123","name":"Juan Carlos","apellido":"Cuevas"},{"_id":"234123412c3123","name":"Antonio","apellido":"Yuste"},{"_id":"234123412c3123","name":"Manuel Ángel","apellido":"Gadeo"}]';
     let userList;//JSON con los usuarios
     try {
         userList = JSON.parse(users);
@@ -121,6 +121,11 @@ function simularDescarga(event) {
                 let li = document.createElement("li");
                 li.innerHTML = "<b>" + user.name + "</b><br><i>" + user.surname + "</i>";
                 li.classList.add("user");
+                //Podemos añadir elementos que lancen eventos con referencia a los objetos descargados
+                button = document.createElement("button");
+                button.innerText = "❌";
+                button.addEventListener("click", () => alert("Soy " + user._id));
+                li.appendChild(button);
                 ul.appendChild(li);
             }
         }
@@ -141,7 +146,6 @@ function lanzaTemporizador(event, timeout) {
     } else {
         console.log("Temporizador no lanzado");
     }
-
 }
 
 function resetButton(b) {
